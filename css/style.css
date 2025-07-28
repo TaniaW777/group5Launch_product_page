@@ -1,0 +1,571 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #fffaf9 0%, #fceef1 100%);
+  color: #2d2d2d;
+  line-height: 1.6;
+}
+
+header.intro {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #fceef1 0%, #f6d6db 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+header.intro::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(184, 107, 119, 0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+header.intro h1 {
+  font-size: 3em;
+  color: #b86b77;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1;
+}
+
+header.intro p {
+  font-size: 1.3em;
+  color: #444;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.countdown-section {
+  padding: 50px 20px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin: 20px;
+  border-radius: 15px;
+}
+
+.countdown-section h2 {
+  font-size: 2.2em;
+  color: #9a5b64;
+  margin-bottom: 30px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  background: linear-gradient(135deg, #b86b77 0%, #9a5b64 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  min-width: 80px;
+  box-shadow: 0 8px 25px rgba(184, 107, 119, 0.3);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.countdown-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(184, 107, 119, 0.4);
+}
+
+.countdown-item span {
+  display: block;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.countdown-item .label {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.categories {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.categories h2 {
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  color: #9a5b64;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.category-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
+  border: 2px solid #e4c4c4;
+  padding: 40px 30px;
+  width: 220px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-weight: bold;
+  font-size: 1.1em;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(184, 107, 119, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+.card:hover {
+  background: linear-gradient(135deg, #f6d6db 0%, #fceef1 100%);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(184, 107, 119, 0.2);
+  border-color: #b86b77;
+}
+
+.footer {
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #f0eaea 0%, #e4c4c4 100%);
+  text-align: center;
+  font-size: 0.95em;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header.intro h1 {
+    font-size: 2.2em;
+  }
+  
+  header.intro p {
+    font-size: 1.1em;
+  }
+  
+  .countdown {
+    gap: 15px;
+  }
+  
+  .countdown-item {
+    padding: 20px 15px;
+    min-width: 70px;
+  }
+  
+  .countdown-item span {
+    font-size: 2em;
+  }
+  
+  .categories h2 {
+    font-size: 2em;
+  }
+  
+  .card {
+    width: 180px;
+    padding: 30px 20px;
+  }
+  
+  .category-grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  header.intro {
+    padding: 40px 15px;
+  }
+  
+  header.intro h1 {
+    font-size: 1.8em;
+  }
+  
+  .countdown-section {
+    margin: 10px;
+    padding: 30px 15px;
+  }
+  
+  .countdown {
+    gap: 10px;
+  }
+  
+  .countdown-item {
+    padding: 15px 10px;
+    min-width: 60px;
+  }
+  
+  .countdown-item span {
+    font-size: 1.5em;
+  }
+  
+  .card {
+    width: 150px;
+    padding: 25px 15px;
+  }
+}
+
+/* Animation for page load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.categories, .countdown-section {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.card {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+
+
+
+/* Newsletter Form Styling */
+.newsletter-form {
+  margin: 40px auto;
+  max-width: 400px;
+  text-align: center;
+}
+
+.newsletter-form p {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.newsletter-form input[type="email"] {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e4c4c4;
+  border-radius: 10px;
+  font-size: 1em;
+  margin-bottom: 15px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.newsletter-form input[type="email"]:focus {
+  outline: none;
+  border-color: #b86b77;
+  box-shadow: 0 0 10px rgba(184, 107, 119, 0.2);
+}
+
+.newsletter-form button {
+  background: linear-gradient(135deg, #b86b77 0%, #9a5b64 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(184, 107, 119, 0.3);
+}
+
+.newsletter-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(184, 107, 119, 0.4);
+}
+
+.newsletter-form button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .newsletter-form {
+    margin: 30px 15px;
+  }
+  
+  .newsletter-form input[type="email"],
+  .newsletter-form button {
+    padding: 12px;
+  }
+}
+
+
+
+/* Product Description Styling */
+.product-description {
+  padding: 60px 20px;
+  background: #fff;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.description-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.description-content h2 {
+  font-size: 2.5em;
+  color: #9a5b64;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.description-content h3 {
+  font-size: 1.8em;
+  color: #b86b77;
+  margin: 40px 0 20px 0;
+  border-bottom: 2px solid #e4c4c4;
+  padding-bottom: 10px;
+}
+
+.description-content h4 {
+  font-size: 1.3em;
+  color: #9a5b64;
+  margin: 25px 0 15px 0;
+}
+
+.description-content p {
+  font-size: 1.1em;
+  color: #444;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.description-content ul {
+  margin: 20px 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.description-content ul li {
+  background: linear-gradient(135deg, #fceef1 0%, #f6d6db 100%);
+  margin: 15px 0;
+  padding: 15px 20px;
+  border-radius: 10px;
+  border-left: 4px solid #b86b77;
+  font-size: 1em;
+  color: #444;
+  transition: all 0.3s ease;
+}
+
+.description-content ul li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(184, 107, 119, 0.2);
+}
+
+.description-content ul li strong {
+  color: #9a5b64;
+}
+
+/* Fragrance Types Styling */
+.fragrance-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.fragrance-type {
+  background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid #e4c4c4;
+  transition: all 0.3s ease;
+}
+
+.fragrance-type:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(184, 107, 119, 0.15);
+  border-color: #b86b77;
+}
+
+/* Skincare Steps Styling */
+.skincare-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.skincare-step {
+  background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid #e4c4c4;
+  transition: all 0.3s ease;
+}
+
+.skincare-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(184, 107, 119, 0.15);
+  border-color: #b86b77;
+}
+
+/* Key Ingredients Styling */
+.key-ingredients {
+  background: linear-gradient(135deg, #fceef1 0%, #f6d6db 100%);
+  padding: 25px;
+  border-radius: 15px;
+  margin: 30px 0;
+}
+
+.key-ingredients p {
+  margin: 15px 0;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(184, 107, 119, 0.2);
+}
+
+.key-ingredients p:last-child {
+  border-bottom: none;
+}
+
+/* Makeup Categories Styling */
+.makeup-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.makeup-category {
+  background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid #e4c4c4;
+  transition: all 0.3s ease;
+}
+
+.makeup-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(184, 107, 119, 0.15);
+  border-color: #b86b77;
+}
+
+/* Signature Collections Styling */
+.signature-collections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.collection {
+  background: linear-gradient(135deg, #fceef1 0%, #f6d6db 100%);
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid #b86b77;
+  transition: all 0.3s ease;
+}
+
+.collection:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(184, 107, 119, 0.2);
+}
+
+/* Launch Promise Styling */
+.launch-promise {
+  background: linear-gradient(135deg, #b86b77 0%, #9a5b64 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  margin: 40px 0 20px 0;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 500;
+  box-shadow: 0 8px 25px rgba(184, 107, 119, 0.3);
+}
+
+/* Responsive Design for Product Descriptions */
+@media (max-width: 768px) {
+  .product-description {
+    margin: 10px;
+    padding: 40px 15px;
+  }
+  
+  .description-content h2 {
+    font-size: 2em;
+  }
+  
+  .description-content h3 {
+    font-size: 1.5em;
+  }
+  
+  .description-content h4 {
+    font-size: 1.2em;
+  }
+  
+  .fragrance-types,
+  .skincare-steps,
+  .makeup-categories,
+  .signature-collections {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .fragrance-type,
+  .skincare-step,
+  .makeup-category,
+  .collection {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .description-content h2 {
+    font-size: 1.8em;
+  }
+  
+  .description-content h3 {
+    font-size: 1.3em;
+  }
+  
+  .description-content p {
+    font-size: 1em;
+  }
+  
+  .launch-promise {
+    font-size: 1.1em;
+    padding: 20px;
+  }
+}
+
